@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="https://unpkg.com/tailwindcss^2/dist/tailwind.min.css" rel="stylesheet">
+ <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+    
+        function dragStart(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+    
+        function dragDrop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+        </script>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  padding: 16px 20px;
+}
+
+.dropdown .dropbtn {
+  font-size: 20px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+#box {
+		margin: auto;
+		width: 100%;
+		height: 400px;
+		border: 3px solid green;
+		padding: 10px;
+	}
+	
+	#box1,
+	#box2,
+	#box3 {
+		float: left;
+		margin: 5px;
+		padding: 10px;
+	}
+	
+	#box1 {
+		width: 90px;
+		height: 90px;
+		background-color: #F5B5C5;
+	}
+	
+	#box2 {
+		width: 200px;
+		height: 00px;
+		background-color: #B5D5F5;
+	}
+	
+	#box3 {
+		width: 350px;
+		height: 350px;
+		background-color: #BEA7CC;
+	}
+	
+	p {
+		font-size: 20px;
+		font-weight: bold;
+		text-align: center;
+	}
+	
+	.gfg {
+		font-size: 40px;
+		color: #45aeeb;
+		font-weight: bold;
+		text-align: center;
+	}
+    body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+/* Set a style for all buttons */
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+.slidecontainer {
+  width: 50%;
+  padding-right: 1000px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+.sketchfab-embed-wrapper{
+  padding: 100px;
+}
+
+
+
+
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <div class="dropdown">
+        <button class="dropbtn">EXPORT 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">EDIT</a>
+          <a href="#">IMPORT FROM DEVICE</a>
+          <a href="#">IMPORT FROM ONLINE</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn">EDIT 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">SELECT</a>
+          <a href="#">CROP</a>
+          <a href="#">MARQUEE</a>
+          <a href="#">PAINT</a>
+          <a href="#">INVERTION</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn">SHAPES 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li><a class="dropdown-item" href="#"> <i class="fas fa-user-alt pe-2"></i></a></li>
+            <li><a class="dropdown-item" href="#"> <i class="fas fa-cog pe-2"></i></a></li>
+            <li><a class="dropdown-item" href="#"> <i class="fas fa-door-open pe-2"></i></a></li>
+          </ul>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn">LIGHTENING
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn">3D DESIGNS 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn">3D SHAPES 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+        </div>
+      </div> 
+      <div class="dropdown">
+        <button class="dropbtn">3D SHAPES 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        </div>
+  <div class="dropdown">
+    <button class="dropbtn">SHAPES 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+    </div>
+  </div> 
+</div>
+<button onclick="document.getElementById('id01').style.display='block'">START</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      
+      <p>WHAT DO YOU WANT TO DO</p>
+    
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">DESIGN</button>
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="deletebtn">ANIMATE</button>
+      </div>
+    </div>
+  </form>
+</div>
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+<div class="gfg" >WORKSPACE</div>
+	
+<p>DRAG AND DESIGN</p>
+
+<div class="sketchfab-embed-wrapper"> <iframe title="Microphone GXL 066 Bafhcteks" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share width="1300" height="500" src="https://sketchfab.com/models/5172dbe9281a45f48cee8c15bdfa1831/embed?ui_infos=0&ui_watermark_link=0&ui_watermark=0"> </iframe> </div>
+	
+    <h4>SETTINGS</h4>
+
+    <div class="slidecontainer">
+      <h5>WIDTH</h5>
+      <input type="range" min="1" max="100" value="50">
+      
+      <h5>HEIGHT</h5>
+      <input type="range" min="1" max="100" value="50" >
+      <h5>THICKNESS</h5>
+      <input type="range" min="1" max="100" value="50">
+      <h5>ROTATE</h5>
+      <input type="range" min="1" max="100" value="50">
+      <h5>ZOOM</h5>
+      <input type="range" min="1" max="100" value="50">
+    </div>   
+</body>
+</html>
+
+
+
+
+
